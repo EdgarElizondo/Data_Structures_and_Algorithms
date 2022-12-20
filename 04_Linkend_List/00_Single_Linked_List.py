@@ -100,16 +100,9 @@ class sl_list:
             print("The SLL is empty")
         else:
             pass
-
-
-single_list = sl_list()
-single_list.insert(1,1)
-single_list.insert(3,1)
-single_list.insert(7,1)
-single_list.insert(11,1)
-
-#single_list.__insert__(0,2)
-
-print([node.value for node in single_list])
-single_list.delete(-1)
-print([node.value for node in single_list])
+    def clear(self):
+        if self.head is None:
+            print("The SLL is empty")
+        else:
+            self.head = None
+            self.tail = None
