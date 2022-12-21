@@ -86,27 +86,43 @@ class CSLL:
                 if tempNode == self.tail.next:
                     return "Value not found"
     # Delete Method
-    def delete(self):
-        pass
+    def delete(self,location = 0):
+        if self.head is None:
+            print("The CSLL is empty")
+        else:
+            if self.head == self.tail:
+                self.head.next = None
+                self.head = None
+                self.tail = None
+            else:
+                if location == 0:
+                    self.head = self.head.next
+                    self.tail.next = self.head
+                elif (location == -1)|(location == self.elem):
+                    tempNode = self.head
+                    while tempNode is not None:
+                        if tempNode.next == self.tail:
+                            break
+                        tempNode = tempNode.next
+                    tempNode.next = self.head
+                    self.tail = tempNode 
+                else:
+                    index = 0
+                    tempNode = self.head
+                    while index < location -1:
+                        index += 1
+                        tempNode = tempNode.next
+                    nextNode = tempNode.next
+                    tempNode.next = nextNode.next
+            self.elem -= 1
+
     # Clear Method
     def clear(self):
         if self.head is None:
             print("The CSLL is already empty")
         else:
             self.head = None
+            self.tail.next = None
             self.tail = None
+            self.elem = 0
             return "CLSS clear"
-    
-circular_SLL = CSLL()
-circular_SLL.insert(1)
-circular_SLL.insert(7)
-circular_SLL.insert(15,1)
-circular_SLL.insert(5,-1)
-circular_SLL.insert(8,2)
-circular_SLL.insert(13,-1)
-circular_SLL.insert(10,3)
-
-print([node.value for node in circular_SLL])
-print(circular_SLL.clear())
-print([node.value for node in circular_SLL])
-
