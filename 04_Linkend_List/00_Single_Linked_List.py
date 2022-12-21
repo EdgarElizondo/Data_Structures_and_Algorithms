@@ -19,7 +19,7 @@ class sl_list:
     def insert(self,value,location = 0):
         if location > self.elem:
             location = self.elem
-            print("Location is adjusted to list bounderies")
+            print("Location out of list bounderies adjusted")
         
         newNode  = node(value)
         if self.head is None:
@@ -94,6 +94,7 @@ class sl_list:
                         index +=1
                     nextNode = tempNode.next
                     tempNode.next = nextNode.next
+            self.elem -= 1
 
     def remove(self,value):
         if self.head is None:
@@ -106,3 +107,4 @@ class sl_list:
         else:
             self.head = None
             self.tail = None
+            self.elem = 0
