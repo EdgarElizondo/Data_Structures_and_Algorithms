@@ -11,7 +11,7 @@ class node:
         return str(self.value)
 
 class LinkedList:
-    def __init__(self,values = None):
+    def __init__(self):
         self.head = None
         self.tail = None
     
@@ -25,7 +25,7 @@ class LinkedList:
         values =  [str(x.value) for x in self]
         return '->'.join(values)
 
-    def __iter__(self):
+    def __len__(self):
         result = 0
         tempNode = self.head
         while tempNode:
@@ -49,9 +49,6 @@ class LinkedList:
         for i in range(n):
             self.add(randint(min_value,max_value))
         return    
-
-
-
 
 
 
