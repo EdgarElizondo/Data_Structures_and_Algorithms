@@ -94,15 +94,3 @@ class BinaryTree:
             return "The Binary Tree is empty"
         self.list = [None] * (self.size + 1)
         self.lastIndex = 0
-
-
-tree = BinaryTree(20)
-tree.add('Drinks')
-tree.add('Hot')
-tree.add('Cold')
-tree.add('Tea')
-tree.add('Coffee')
-tree.add('Cola')
-
-tree.delete('Cold')
-tree.traversal()
